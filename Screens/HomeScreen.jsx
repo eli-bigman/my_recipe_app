@@ -10,8 +10,44 @@ const HomeScreen = () => {
             foodImage: require('../assets/Black-forest-Gateau.png'),
             foodName: 'Black forest Gateau',
         },
-        // Add more food items here with unique IDs
+        {
+            id: 2,
+            foodImage: require('../assets/Chorizo-&-mozzarella-gnocchi-bake.png'),
+            foodName: 'Chorizo & mozzarella gnocchi bake',
+        },
+        {
+            id: 3,
+            foodImage: require('../assets/Huevos-Rancheros.png'),
+            foodName: 'Huevos Rancheros',
+        },
+        {
+            id: 4,
+            foodImage: require('../assets/Coconut-squash-curry.png'),
+            foodName: 'Coconut & squash curry',
+        },
+        {
+            id: 5,
+            foodImage: require('../assets/Black-forest-Gateau.png'),
+            foodName: 'Black forest Gateau',
+        },
+        {
+            id: 6,
+            foodImage: require('../assets/Chorizo-&-mozzarella-gnocchi-bake.png'),
+            foodName: 'Chorizo & mozzarella gnocchi bake',
+        },
+        {
+            id: 7,
+            foodImage: require('../assets/Huevos-Rancheros.png'),
+            foodName: 'Huevos Rancheros',
+        },
+        {
+            id: 8,
+            foodImage: require('../assets/Coconut-squash-curry.png'),
+            foodName: 'Coconut & squash curry',
+        },
+
     ];
+
 
     return (
         <View style={styles.container}>
@@ -32,13 +68,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     searchContainer: {
-        marginTop: 226,
+        marginTop: 50,
         marginHorizontal: 42,
     },
     cardListContainer: {
         flex: 1,
         marginVertical: 10,
-        paddingHorizontal: 20,
+        paddingHorizontal: 0,
     },
 });
 

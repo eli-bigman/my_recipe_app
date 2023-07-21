@@ -14,6 +14,7 @@ const CardList = ({ data }) => {
                 numColumns={2}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id.toString()}
+                showsVerticalScrollIndicator={false}
             />
         </View>
     );

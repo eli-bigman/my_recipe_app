@@ -32,15 +32,8 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         labeled={false}
-        barStyle={{ backgroundColor: '#cfbfee', height: 96 }} activeColor="white"
-        tabBarOptions={{
-          tabBarIndicatorStyle: {
-            backgroundColor: '#aa8ee2',
-            height: '100%',
-            borderTopLeftRadius: 999,
-            borderTopRightRadius: 999,
-          },
-        }} >
+        barStyle={{ backgroundColor: '#cfbfee', height: 70 }} activeColor="white"
+      >
         <Tab.Screen name="Home" component={HomeScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
@@ -56,13 +49,13 @@ export default function App() {
         <Tab.Screen name="Notification" component={SaveScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="heart" color={color} size={26} />
+              <MaterialCommunityIcons name="heart" color="#231F20" size={26} />
             ),
           }} />
         <Tab.Screen name="Profile" component={AddRecipeScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="account-circle" color={color} size={25} />
+              <MaterialCommunityIcons name="account-circle" color="#231F20" size={25} />
             ),
           }} />
       </Tab.Navigator>

@@ -17,6 +17,7 @@ const CardComponent = ({ foodImage, foodName }) => {
                 borderRadius: 10,
                 overflow: 'hidden',
                 position: 'relative',
+                margin: 8
             }}
         >
             <Image
