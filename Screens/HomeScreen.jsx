@@ -9,41 +9,49 @@ const HomeScreen = () => {
             id: 1,
             foodImage: require('../assets/Black-forest-Gateau.png'),
             foodName: 'Black forest Gateau',
+            category: "Dessert"
         },
         {
             id: 2,
             foodImage: require('../assets/Chorizo-&-mozzarella-gnocchi-bake.png'),
             foodName: 'Chorizo & mozzarella gnocchi bake',
+            category: "Breakfast"
         },
         {
             id: 3,
             foodImage: require('../assets/Huevos-Rancheros.png'),
             foodName: 'Huevos Rancheros',
+            category: "Breakfast"
         },
         {
             id: 4,
             foodImage: require('../assets/Coconut-squash-curry.png'),
             foodName: 'Coconut & squash curry',
+            category: "Lunch"
         },
         {
             id: 5,
             foodImage: require('../assets/Black-forest-Gateau.png'),
             foodName: 'Black forest Gateau',
+            category: "Breakfast"
         },
         {
             id: 6,
             foodImage: require('../assets/Chorizo-&-mozzarella-gnocchi-bake.png'),
             foodName: 'Chorizo & mozzarella gnocchi bake',
+            category: "Breakfast"
         },
         {
             id: 7,
             foodImage: require('../assets/Huevos-Rancheros.png'),
             foodName: 'Huevos Rancheros',
+            category: "Drinks"
         },
         {
             id: 8,
             foodImage: require('../assets/Coconut-squash-curry.png'),
             foodName: 'Coconut & squash curry',
+            category: "Launch"
         },
 
     ];
