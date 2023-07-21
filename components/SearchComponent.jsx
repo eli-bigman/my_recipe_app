@@ -1,18 +1,24 @@
-import React from 'react';
-import { View, TextInput, Text } from 'react-native';
+import React, { useRef } from 'react';
+import { View, TextInput, Text, TouchableOpacity } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-
 const SearchComponent = () => {
+  const textInputRef = useRef(null);
+
+  const handleSearchBoxPress = () => {
+    // Set focus on the TextInput when the search box is pressed
+    textInputRef.current.focus();
+  };
+
   return (
     <View>
-
       <Text
         style={{
           marginBottom: 52,
           textAlign: 'center',
-          fontSize: 22
-        }}>
+          fontSize: 22,
+        }}
+      >
         Search
       </Text>
 
@@ -20,8 +26,9 @@ const SearchComponent = () => {
         style={{
           marginBottom: 5,
           textAlign: 'left',
-          fontSize: 20
-        }}>
+          fontSize: 20,
+        }}
+      >
         What is in your kitchen?
       </Text>
       <Text
@@ -29,12 +36,14 @@ const SearchComponent = () => {
           marginBottom: 30,
           textAlign: 'left',
           fontSize: 15,
-          color: "#424242"
+          color: '#424242',
         }}
       >
         Enter some ingredients
       </Text>
-      <View
+
+      {/* Wrap the whole search box in TouchableOpacity */}
+      <TouchableOpacity
         style={{
           width: 312,
           height: 50,
@@ -46,14 +55,15 @@ const SearchComponent = () => {
           alignItems: 'center',
           paddingHorizontal: 10,
         }}
+        onPress={handleSearchBoxPress} // Set focus on TextInput when the search box is pressed
       >
-
         <MaterialCommunityIcons name="magnify" color="#000" size={23} />
         <TextInput
+          ref={textInputRef} // Create a reference to the TextInput
           placeholder="Type your ingredients"
-          style={{ color: "#AEAEAE" }}
+          style={{ flex: 1, color: '#AEAEAE' }}
         />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
