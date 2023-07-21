@@ -6,7 +6,6 @@ const SearchComponent = () => {
   const textInputRef = useRef(null);
 
   const handleSearchBoxPress = () => {
-    // Set focus on the TextInput when the search box is pressed
     textInputRef.current.focus();
   };
 
@@ -42,7 +41,6 @@ const SearchComponent = () => {
         Enter some ingredients
       </Text>
 
-      {/* Wrap the whole search box in TouchableOpacity */}
       <TouchableOpacity
         style={{
           width: 312,
@@ -55,11 +53,11 @@ const SearchComponent = () => {
           alignItems: 'center',
           paddingHorizontal: 10,
         }}
-        onPress={handleSearchBoxPress} // Set focus on TextInput when the search box is pressed
+        onPress={handleSearchBoxPress}
       >
         <MaterialCommunityIcons name="magnify" color="#000" size={23} />
         <TextInput
-          ref={textInputRef} // Create a reference to the TextInput
+          ref={textInputRef}
           placeholder="Type your ingredients"
           style={{ flex: 1, color: '#AEAEAE' }}
         />
