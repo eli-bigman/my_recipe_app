@@ -15,7 +15,7 @@ const SearchComponent = () => {
         style={{
           marginBottom: 52,
           textAlign: 'center',
-          fontSize: 22,
+          fontSize: 30,
         }}
       >
         Search
