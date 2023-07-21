@@ -1,20 +1,71 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import AddRecipeScreen from './Screens/AddRecipeScreen';
+import HomeScreen from "./Screens/HomeScreen";
+import SaveScreen from "./Screens/SaveScreen";
+import FavoriteScreen from "./Screens/FavoriteScreen"
+
+// import { AppLoading } from 'expo';
+// import { useFonts } from 'expo-font';
+
+
+
+const Tab = createMaterialBottomTabNavigator();
+
 
 export default function App() {
+
+  // const [fontsLoaded] = useFonts({
+  //   'Inter-Black': require('./assets/fonts/Inter-Black.ttf'),
+  //   'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),
+  //   'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf')
+  // });
+
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator
+        labeled={false}
+        barStyle={{ backgroundColor: '#cfbfee', height: 96 }} activeColor="white"
+        tabBarOptions={{
+          tabBarIndicatorStyle: {
+            backgroundColor: '#aa8ee2',
+            height: '100%',
+            borderTopLeftRadius: 999,
+            borderTopRightRadius: 999,
+          },
+        }} >
+        <Tab.Screen name="Home" component={HomeScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="home" color={color} size={26} />
+            ),
+          }} />
+        <Tab.Screen name="Search" component={FavoriteScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="magnify" color={color} size={26} />
+            ),
+          }} />
+        <Tab.Screen name="Notification" component={SaveScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="heart" color={color} size={26} />
+            ),
+          }} />
+        <Tab.Screen name="Profile" component={AddRecipeScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="account-circle" color={color} size={25} />
+            ),
+          }} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
