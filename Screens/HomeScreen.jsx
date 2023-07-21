@@ -13,7 +13,7 @@ const HomeScreen = () => {
         },
         {
             id: 2,
-            foodImage: require('../assets/Chorizo-&-mozzarella-gnocchi-bake.png'),
+            foodImage: require('../assets/Chorizo-mozzarella-gnocchi-bake.png'),
             foodName: 'Chorizo & mozzarella gnocchi bake',
             category: "Breakfast"
         },
@@ -37,7 +37,7 @@ const HomeScreen = () => {
         },
         {
             id: 6,
-            foodImage: require('../assets/Chorizo-&-mozzarella-gnocchi-bake.png'),
+            foodImage: require('../assets/Chorizo-mozzarella-gnocchi-bake.png'),
             foodName: 'Chorizo & mozzarella gnocchi bake',
             category: "Breakfast"
         },

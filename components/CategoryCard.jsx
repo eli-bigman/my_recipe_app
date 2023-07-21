@@ -4,8 +4,8 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 const CategoryCard = ({ Name, image }) => {
     return (
         <View style={styles.container}>
-            <Image source={image} style={styles.image} />
             <Text style={styles.categoryName}>{Name}</Text>
+            <Image source={image} style={styles.image} />
         </View>
     );
 };
@@ -26,8 +26,11 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 4,
         flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 16,
+        margin: 10,
+
     },
     image: {
         width: 24,
@@ -37,6 +40,7 @@ const styles = StyleSheet.create({
     categoryName: {
         fontSize: 16,
         color: '#000',
+        flexGrow: 1
     },
 });
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-function FavouriteScreen() {
+function FavoriteScreen() {
     return (
         <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
             <Text>FavouriteScreen</Text>
@@ -11,4 +11,4 @@ function FavouriteScreen() {
 }
 
 
-export default FavouriteScreen
+export default FavoriteScreen

@@ -32,7 +32,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        labeled={false}
+        labeled={true}
         barStyle={{ backgroundColor: '#cfbfee', height: 70 }} activeColor="white"
       >
         <Tab.Screen name="Home" component={HomeScreen}
@@ -41,22 +41,22 @@ export default function App() {
               <MaterialCommunityIcons name="home" color={color} size={26} />
             ),
           }} />
-        <Tab.Screen name="Search" component={CategoryScreen}
+        <Tab.Screen name="Categories" component={CategoryScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="magnify" color={color} size={26} />
+              <MaterialCommunityIcons name="bookmark" color={color} size={26} />
             ),
           }} />
-        <Tab.Screen name="Notification" component={FavoriteScreen}
+        <Tab.Screen name="Favorite" component={FavoriteScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="heart" color="#231F20" size={26} />
             ),
           }} />
-        <Tab.Screen name="Profile" component={AddRecipeScreen}
+        <Tab.Screen name="Add Recipe" component={AddRecipeScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="account-circle" color="#231F20" size={25} />
+              <MaterialCommunityIcons name="plus" color="#231F20" size={30} />
             ),
           }} />
       </Tab.Navigator>
