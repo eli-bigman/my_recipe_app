@@ -5,8 +5,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import AddRecipeScreen from './Screens/AddRecipeScreen';
 import HomeScreen from "./Screens/HomeScreen";
-import SaveScreen from "./Screens/SaveScreen";
+import CategoryScreen from "./Screens/CategoryScreen";
 import FavoriteScreen from "./Screens/FavoriteScreen"
+
 
 // import { AppLoading } from 'expo';
 // import { useFonts } from 'expo-font';
@@ -40,13 +41,13 @@ export default function App() {
               <MaterialCommunityIcons name="home" color={color} size={26} />
             ),
           }} />
-        <Tab.Screen name="Search" component={FavoriteScreen}
+        <Tab.Screen name="Search" component={CategoryScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="magnify" color={color} size={26} />
             ),
           }} />
-        <Tab.Screen name="Notification" component={SaveScreen}
+        <Tab.Screen name="Notification" component={FavoriteScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="heart" color="#231F20" size={26} />
