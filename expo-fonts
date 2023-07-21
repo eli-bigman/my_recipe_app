@@ -1,0 +1,19 @@
+{
+    "fonts": [
+        {
+            "asset": "assets/fonts/Inter-Black.ttf",
+            "fontWeight": "900",
+            "fontStyle": "normal"
+        },
+        {
+            "asset": "assets/fonts/Inter-Bold.ttf",
+            "fontWeight": "700",
+            "fontStyle": "normal"
+        },
+        {
+            "asset": "assets/fonts/Inter-Regular.ttf",
+            "fontWeight": "400",
+            "fontStyle": "normal"
+        }
+    ]
+}
