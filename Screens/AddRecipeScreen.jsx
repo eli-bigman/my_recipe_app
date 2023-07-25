@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
+import firebase from '../firebase.config.js';
+import { collection, addDoc } from 'firebase/firestore';
+
+
 
 const AddRecipeScreen = () => {
     const [imageUri, setImageUri] = useState(null);
@@ -25,6 +29,40 @@ const AddRecipeScreen = () => {
         }
     };
 
+    // const handleSaveRecipe = async () => {
+    //     try {
+    //         const db = firebase.firestore();
+
+    //         // Save the input text to Firestore
+    //         const recipeRef = await addDoc(collection(db, 'recipes'), {
+    //             name: nameValue,
+    //             category: categoryValue,
+    //             description: descriptionValue,
+    //             ingredients: ingredientsValue,
+    //         });
+
+    //         console.log('Recipe added with ID: ', recipeRef.id);
+
+    //         // Save the image to Firebase Storage
+    //         const response = await fetch(imageUri);
+    //         const blob = await response.blob();
+    //         const imageName = `recipe_${recipeRef.id}.jpg`; // You can create a unique image name based on the recipe ID
+    //         const storageRef = storage.ref().child(imageName);
+    //         await storageRef.put(blob);
+
+    //         console.log('Image uploaded successfully!');
+    //     } catch (error) {
+    //         console.error('Error adding recipe: ', error);
+    //     }
+    // };
+
+
+    // const [nameValue, setNameValue] = useState('');
+    // const [categoryValue, setCategoryValue] = useState('');
+    // const [descriptionValue, setDescriptionValue] = useState('');
+    // const [ingredientsValue, setIngredientsValue] = useState('');
+
+
     return (
         <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
 
@@ -43,29 +81,42 @@ const AddRecipeScreen = () => {
                 </TouchableOpacity>
             </View>
 
-
             <TextInput
                 style={styles.input}
                 placeholder="Name"
                 placeholderTextColor="#A9A9A9"
+            // value={nameValue}
+            // onChangeText={(text) => setNameValue(text)}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Category"
                 placeholderTextColor="#A9A9A9"
+            // value={categoryValue}
+            // onChangeText={(text) => setCategoryValue(text)}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Description"
                 placeholderTextColor="#A9A9A9"
                 multiline
+            // value={descriptionValue}
+            // onChangeText={(text) => setDescriptionValue(text)}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Ingredients"
                 placeholderTextColor="#A9A9A9"
                 multiline
+            // value={ingredientsValue}
+            // onChangeText={(text) => setIngredientsValue(text)}
             />
+            <TouchableOpacity style={styles.saveButton} >
+                {/* <TouchableOpacity style={styles.saveButton} onPress={handleSaveRecipe}> */}
+
+                <Text style={styles.saveButtonText}>Save Recipe</Text>
+            </TouchableOpacity>
+
 
 
         </ScrollView>

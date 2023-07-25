@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import SearchComponent from '../components/SearchComponent';
 import CardList from '../components/CardList';
+
+import { firebase, db, storage } from '../firebase.config';
 
 const HomeScreen = () => {
     const foodData = [
@@ -17,45 +19,39 @@ const HomeScreen = () => {
             foodName: 'Chorizo & mozzarella gnocchi bake',
             category: "Breakfast"
         },
-        {
-            id: 3,
-            foodImage: require('../assets/Huevos-Rancheros.png'),
-            foodName: 'Huevos Rancheros',
-            category: "Breakfast"
-        },
-        {
-            id: 4,
-            foodImage: require('../assets/Coconut-squash-curry.png'),
-            foodName: 'Coconut & squash curry',
-            category: "Lunch"
-        },
-        {
-            id: 5,
-            foodImage: require('../assets/Black-forest-Gateau.png'),
-            foodName: 'Black forest Gateau',
-            category: "Breakfast"
-        },
-        {
-            id: 6,
-            foodImage: require('../assets/Chorizo-mozzarella-gnocchi-bake.png'),
-            foodName: 'Chorizo & mozzarella gnocchi bake',
-            category: "Breakfast"
-        },
-        {
-            id: 7,
-            foodImage: require('../assets/Huevos-Rancheros.png'),
-            foodName: 'Huevos Rancheros',
-            category: "Drinks"
-        },
-        {
-            id: 8,
-            foodImage: require('../assets/Coconut-squash-curry.png'),
-            foodName: 'Coconut & squash curry',
-            category: "Launch"
-        },
+
 
     ];
 
+
+    const uploadImagesToFirebaseStorage = async (foodData) => {
+        try {
+            const uploadPromises = foodData.map(async (item) => {
+                const response = await fetch(item.foodImage);
+                const blob = await response.blob();
+                const fileName = `food_${item.id}.png`; // You can adjust the file naming based on your preference
+
+                const ref = storage.ref().child(fileName);
+                await ref.put(blob);
+
+                const url = await ref.getDownloadURL();
+                return { ...item, foodImage: url };
+            });
+
+            return Promise.all(uploadPromises);
+        } catch (error) {
+            console.error('Error uploading images to Firebase Storage:', error);
+            return foodData;
+        }
+    };
+
+    // Call the function to upload the images when the component mounts
+    useEffect(() => {
+        (async () => {
+            const updatedFoodData = await uploadImagesToFirebaseStorage(foodData);
+            // Use the updatedFoodData for the CardList
+        })();
+    }, []);
 
     return (
         <View style={styles.container}>
