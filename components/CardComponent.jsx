@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
+
 const CardComponent = ({ foodImage, foodName }) => {
     const [isLiked, setIsLiked] = useState(false);
 
@@ -17,7 +18,10 @@ const CardComponent = ({ foodImage, foodName }) => {
                 borderRadius: 10,
                 overflow: 'hidden',
                 position: 'relative',
-                margin: 8
+                marginTop: 15,
+                marginBottom: 10,
+                marginLeft: 20,
+                marginRight: 20,
             }}
         >
             <Image
@@ -44,11 +48,7 @@ const CardComponent = ({ foodImage, foodName }) => {
                 }}
             >
                 <TouchableOpacity onPress={handleLikePress}>
-                    <MaterialCommunityIcons
-                        name={isLiked ? 'heart' : 'heart-outline'}
-                        color={isLiked ? 'red' : 'black'}
-                        size={20}
-                    />
+                    <MaterialCommunityIcons name={isLiked ? 'heart' : 'heart-outline'} color={isLiked ? 'red' : 'black'} size={20} />
                 </TouchableOpacity>
             </View>
 
@@ -76,6 +76,7 @@ const CardComponent = ({ foodImage, foodName }) => {
                     {foodName}
                 </Text>
             </View>
+
         </View>
     );
 };

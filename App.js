@@ -7,6 +7,7 @@ import AddRecipeScreen from './Screens/AddRecipeScreen';
 import HomeScreen from "./Screens/HomeScreen";
 import CategoryScreen from "./Screens/CategoryScreen";
 import FavoriteScreen from "./Screens/FavoriteScreen"
+import RecipeScreen from './Screens/RecipeScreen';
 
 
 
@@ -20,7 +21,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 
 export default function App() {
-
+  //This comment is for importing the fonts but its not working
   // const [fontsLoaded] = useFonts({
   //   'Inter-Black': require('./assets/fonts/Inter-Black.ttf'),
   //   'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),
@@ -39,26 +40,27 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={HomeScreen}
           options={{
-            tabBarIcon: ({ color, size }) => (
+            tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="home" color={color} size={26} />
             ),
           }} />
         <Tab.Screen name="Categories" component={CategoryScreen}
           options={{
-            tabBarIcon: ({ color, size }) => (
+            tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="bookmark" color={color} size={26} />
             ),
           }} />
         <Tab.Screen name="Favorite" component={FavoriteScreen}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="heart" color="#231F20" size={26} />
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="heart" color={color} size={26} />
             ),
           }} />
+
         <Tab.Screen name="Add Recipe" component={AddRecipeScreen}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="plus" color="#231F20" size={30} />
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="plus" color={color} size={30} />
             ),
           }} />
       </Tab.Navigator>
