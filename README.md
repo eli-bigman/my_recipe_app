@@ -1,6 +1,8 @@
 # 🍔 Recipes App 🍕
 
-![App Preview](assets/FigmaDesignPic.jpg)
+<p align="center">
+  <img src="assets/FigmaDesignPic.jpg" alt="App Preview" width="400" height="500">
+</p>
 
 This is a React Native app that displays delicious recipes and their details. Users can view different recipes, their ingredients, and procedures.
 
@@ -13,9 +15,23 @@ This is a React Native app that displays delicious recipes and their details. Us
 
 ## Screenshots 📸
 
-![Home Screen](assets/HomeScreenPic.jpg)
-![Recipe Details Screen](assets/CategoryScreenPic.jpg)
-![Add Recipe Screen](assets/AddrecipeScreenPic.jpg)
+#### Home Screen 🏠
+
+<p align="center">
+  <img src="assets/HomeScreenPic.jpg" alt="Home Screen" width="300" height="600">
+</p>
+
+#### Recipe Details Screen 🍲
+
+<p align="center">
+  <img src="assets/CategoryScreenPic.jpg" alt="Recipe Details Screen" width="300" height="600">
+</p>
+
+#### Add Recipe Screen 📝
+
+<p align="center">
+  <img src="assets/AddrecipeScreenPic.jpg" alt="Add Recipe Screen" width="300" height="600">
+</p>
 
 ## Installation 🚀
 
