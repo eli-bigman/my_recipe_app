@@ -1,6 +1,6 @@
 # 🍔 Recipes App 🍕
 
-![App Preview](app_preview.png)
+![App Preview](assets/FigmaDesignPic.jpg)
 
 This is a React Native app that displays delicious recipes and their details. Users can view different recipes, their ingredients, and procedures.
 
@@ -9,12 +9,13 @@ This is a React Native app that displays delicious recipes and their details. Us
 - View a list of various recipes.
 - Click on a recipe to view its details, including ingredients and procedures.
 - Add new recipes to the app.
+- Save recipes for later using the like icon, which adds the recipe to the favorite screen.
 
 ## Screenshots 📸
 
-![Home Screen](screenshots/home_screen.png)
-![Recipe Details Screen](screenshots/recipe_details_screen.png)
-![Add Recipe Screen](screenshots/add_recipe_screen.png)
+![Home Screen](assets/HomeScreenPic.jpg)
+![Recipe Details Screen](assets/CategoryScreenPic.jpg)
+![Add Recipe Screen](assets/AddrecipeScreenPic.jpg)
 
 ## Installation 🚀
 
